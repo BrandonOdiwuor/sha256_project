@@ -1,4 +1,4 @@
-from .sha256 import add32, right_rotate32
+from .sha256 import add32, right_rotate32, little_sigma0
 
 
 def test_add32_one():
@@ -18,3 +18,6 @@ def test_right_rotate32_two():
 
 def test_right_rotate32_three():
     assert right_rotate32(2919882184, 31) == 1544797073
+
+def test_little_sigma0():
+    assert little_sigma0(1114723206) == 1345017931

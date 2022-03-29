@@ -13,3 +13,10 @@ def right_rotate32(value, count):
     right_part = value >> count
     left_part = value << (32 - count)
     return add32(left_part, right_part)
+
+
+def little_sigma0(x):
+    """
+    s0 := (x rightrotate  7) xor (x rightrotate 18) xor (x rightshift  3)
+    """
+    return right_rotate32(x, 7) ^ right_rotate32(x, 18) ^ x >> 3
