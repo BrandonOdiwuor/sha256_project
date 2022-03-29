@@ -20,3 +20,10 @@ def little_sigma0(x):
     s0 := (x rightrotate  7) xor (x rightrotate 18) xor (x rightshift  3)
     """
     return right_rotate32(x, 7) ^ right_rotate32(x, 18) ^ x >> 3
+
+
+def little_sigma1(x):
+    """
+    s1 := (x rightrotate 17) xor (x rightrotate 19) xor (x rightshift 10)
+    """
+    return right_rotate32(x, 17) ^ right_rotate32(x, 19) ^ x >> 10
