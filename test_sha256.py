@@ -1,5 +1,5 @@
 from .sha256 import add32, right_rotate32, little_sigma0, little_sigma1, message_schedule_array,\
-    big_sigma0, big_sigma1, choice, majority, round
+    big_sigma0, big_sigma1, choice, majority, round, compress
 
 
 def test_add32_one():
@@ -64,3 +64,15 @@ def test_round():
         1638715774, 3714074692, 1172792371, 283469062
     ]
     assert round(state, round_constant, schedule_word) == new_state
+
+def test_compress():
+    input_state = [
+      2918946378, 1679978889, 1678006433, 650957219,
+      379281712, 2112907926, 1775216060, 2152648190
+    ]
+    block = "manatee fox unicorn octopus dog fox fox llama vulture jaguar xen"
+    state = [
+        1251501988, 1663226031, 2877128394, 4050467288,
+        2375501075, 1434687977, 2625842981, 650253644
+    ]
+    assert compress(input_state, block.encode()) == state
