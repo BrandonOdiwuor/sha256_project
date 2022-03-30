@@ -27,3 +27,17 @@ def little_sigma1(x):
     s1 := (x rightrotate 17) xor (x rightrotate 19) xor (x rightshift 10)
     """
     return right_rotate32(x, 17) ^ right_rotate32(x, 19) ^ x >> 10
+
+
+def message_schedule_array(block):
+    assert len(block) == 64
+    w = []
+    for i in range(64):
+        if i < 16:
+            assert i == len(w)
+            w.append(int.from_bytes(block[i * 4: i * 4 + 4], 'big'))
+        else:
+            s0 = little_sigma0(w[i - 15])
+            s1 = little_sigma1(w[i - 2])
+            w.append(add32(w[i-16], s0, w[i-7], s1))
+    return w
