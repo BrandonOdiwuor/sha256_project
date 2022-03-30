@@ -1,5 +1,5 @@
 from .sha256 import add32, right_rotate32, little_sigma0, little_sigma1, message_schedule_array,\
-    big_sigma0, big_sigma1, choice
+    big_sigma0, big_sigma1, choice, majority
 
 
 def test_add32_one():
@@ -48,3 +48,6 @@ def test_big_sigma1():
 
 def test_choice():
     assert choice(2749825547, 776049372, 1213590135) == 1783753340
+
+def test_majority():
+    assert majority(3758166654, 2821345890, 1850678816) == 3893039714

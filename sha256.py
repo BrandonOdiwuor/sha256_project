@@ -62,3 +62,10 @@ def choice(x, y, z):
     ch(e,f,g) = (e AND f) xor (not e AND z)
     """
     return (x & y) ^ (~x & z)
+
+
+def majority(x, y, z):
+    """
+    Maj(x, y, z) = (x AND y) XOR (x AND z) XOR (y AND Z)
+    """
+    return (x & y) ^ (x & z) ^ (y & z)
