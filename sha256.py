@@ -69,3 +69,23 @@ def majority(x, y, z):
     Maj(x, y, z) = (x AND y) XOR (x AND z) XOR (y AND Z)
     """
     return (x & y) ^ (x & z) ^ (y & z)
+
+
+def round(state, round_constant, schedule_word):
+    _choice = choice(state[4], state[5], state[6])
+    s1 = big_sigma1(state[4])
+    temp1 = add32(state[7], s1, _choice, round_constant, schedule_word)
+    _majority = majority(state[0], state[1], state[2])
+    s0 = big_sigma0(state[0])
+    temp2 = add32(s0, _majority)
+
+    return [
+        add32(temp1, temp2),
+        state[0],
+        state[1],
+        state[2],
+        add32(state[3], temp1),
+        state[4],
+        state[5],
+        state[6]
+    ]
