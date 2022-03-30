@@ -55,3 +55,10 @@ def big_sigma1(word):
     E1 := (x rightrotate 6) xor (x rightrotate 11) xor (x rightrotate 25)
     """
     return right_rotate32(word, 6) ^ right_rotate32(word, 11) ^ right_rotate32(word, 25)
+
+
+def choice(x, y, z):
+    """
+    ch(e,f,g) = (e AND f) xor (not e AND z)
+    """
+    return (x & y) ^ (~x & z)
