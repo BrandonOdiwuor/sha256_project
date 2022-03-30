@@ -110,3 +110,11 @@ def compress(input_state, block):
         state = round(state, ROUND_CONSTANTS[i], w[i])
     
     return [add32(state, _input_state) for state, _input_state in zip(state, input_state)]
+
+
+def padding(message_length):
+    remaining_bytes = (message_length + 8) % 64
+    filler_bytes = 64 - remaining_bytes
+    zero_bytes = filler_bytes - 1
+    encoded_length = (message_length * 8).to_bytes(8, 'big')
+    return b"\x80" + b"\0" * zero_bytes + encoded_length
