@@ -1,5 +1,5 @@
 from .sha256 import add32, right_rotate32, little_sigma0, little_sigma1, message_schedule_array,\
-    big_sigma0
+    big_sigma0, big_sigma1
 
 
 def test_add32_one():
@@ -42,3 +42,6 @@ def test_message_schedule_array():
 
 def test_big_sigma0():
     assert big_sigma0(3536071395) == 3003388882
+
+def test_big_sigma1():
+    assert big_sigma1(651015076) == 2194029931
