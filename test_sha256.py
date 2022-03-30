@@ -1,4 +1,5 @@
-from .sha256 import add32, right_rotate32, little_sigma0, little_sigma1, message_schedule_array
+from .sha256 import add32, right_rotate32, little_sigma0, little_sigma1, message_schedule_array,\
+    big_sigma0
 
 
 def test_add32_one():
@@ -38,3 +39,6 @@ def test_message_schedule_array():
         509015903, 270850193, 1893431553, 719566283, 2310657204, 365781698, 3761063438, 1007484868
     ]
     assert message_schedule_array(block.encode()) == message_schedule
+
+def test_big_sigma0():
+    assert big_sigma0(3536071395) == 3003388882

@@ -41,3 +41,10 @@ def message_schedule_array(block):
             s1 = little_sigma1(w[i - 2])
             w.append(add32(w[i-16], s0, w[i-7], s1))
     return w
+
+
+def big_sigma0(word):
+    """
+    E0 := (x rightrotate 2) xor (x rightrotate 13) xor (x rightrotate 22)
+    """
+    return right_rotate32(word, 2) ^ right_rotate32(word, 13) ^ right_rotate32(word, 22)
