@@ -9,6 +9,11 @@ ROUND_CONSTANTS = [
     0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208, 0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2,
 ]
 
+INITIALIZATION_VECTOR = [
+    0x6a09e667, 0xbb67ae85, 0x3c6ef372, 0xa54ff53a,
+    0x510e527f, 0x9b05688c, 0x1f83d9ab, 0x5be0cd19,
+]
+
 def add32(*args):
     """
     Adds the numbers in the list of args and returns (sum % s ^ 32)
@@ -118,3 +123,13 @@ def padding(message_length):
     zero_bytes = filler_bytes - 1
     encoded_length = (message_length * 8).to_bytes(8, 'big')
     return b"\x80" + b"\0" * zero_bytes + encoded_length
+
+
+def sha256(message):
+    message_blocks = message + padding(len(message))
+    state_words = INITIALIZATION_VECTOR
+    for block_start_index in range(0, len(message_blocks), 64):
+        block = message_blocks[block_start_index:block_start_index + 64]
+        state_words = compress(state_words, block)
+
+    return b"".join(x.to_bytes(4, 'big') for x in state_words)

@@ -1,5 +1,7 @@
+from hashlib import sha256 as hashlib_sha256
+
 from .sha256 import add32, right_rotate32, little_sigma0, little_sigma1, message_schedule_array,\
-    big_sigma0, big_sigma1, choice, majority, round, compress, padding
+    big_sigma0, big_sigma1, choice, majority, round, compress, padding, sha256
 
 
 def test_add32_one():
@@ -89,3 +91,27 @@ def test_padding():
     ]
     for input, output in zip(inputs, padding_outputs):
         assert padding(input).hex() == output
+
+def test_sha256_one():
+    input = ""
+    assert sha256(input.encode()) == hashlib_sha256(input.encode()).digest()
+
+def test_sha256_two():
+    input = "hello world"
+    assert sha256(input.encode()) == hashlib_sha256(input.encode()).digest()
+
+def test_sha256_three():
+    input = "aardvark zebra yak pig jaguar aardvark rhinoceros butte"
+    assert sha256(input.encode()) == hashlib_sha256(input.encode()).digest()
+
+def test_sha256_four():
+    input = "narwhal dog llama llama giraffe narwhal octopus dog xeno"
+    assert sha256(input.encode()) == hashlib_sha256(input.encode()).digest()
+
+def test_sha256_five():
+    input = """
+            John Jacob Jingleheimer Schmidt! His name is my name too. Whenever 
+            we go out the people always shout there goes John Jacob Jingleheimer 
+            Schmidt! Nanananananana...
+            """
+    assert sha256(input.encode()) == hashlib_sha256(input.encode()).digest()
