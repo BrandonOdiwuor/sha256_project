@@ -1,11 +1,11 @@
 # The SHA-256 Project
-Implementation of the SHA-256 algorithm in Python. 
+Python Implementation of the SHA-256 Secure Hashing Algorithm defined in [FIPS 180-4](https://csrc.nist.gov/publications/detail/fips/180/4/final). 
 
 - SHA-256 - An Implementation of Secure Hashing Algorithm 2 (SHA-2) with 256-bit digest. 
-- Secure Hashing Algorithm is defined in [FIPS 180-4](https://csrc.nist.gov/publications/detail/fips/180/4/final)
 - This implementation is based on the pseudocode algorithm from [Wikipedia](https://en.wikipedia.org/wiki/SHA-2#Pseudocode) and [The SHA-256 Project](https://github.com/oconnor663/sha256_project)
 
 ## Usage
+![sha256_help](https://user-images.githubusercontent.com/15610188/161290119-fe83155f-33a4-4c8c-a420-8f61985554c6.PNG)
 
 ### 1. Hashing a string
 ```
