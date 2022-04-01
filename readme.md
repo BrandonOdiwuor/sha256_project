@@ -11,11 +11,16 @@ Implementation of the SHA-256 algorithm in Python.
 ```
 python sha256.py -s 'message string'
 ```
+#### Screenshot example - String hashing compared with Python's Hashlib sha256 result
+![sha256_string_hash](https://user-images.githubusercontent.com/15610188/161234423-394f05cb-c45c-4da2-9471-85cf7d088391.PNG)
 
 ### 2. Hashing a file
 ```
 python sha256.py -f input-file.txt
 ```
+#### Screesnhot example - File hashing
+![sha256_file_hash](https://user-images.githubusercontent.com/15610188/161234743-39caa934-4d88-472c-a7a8-2c4c2a576eee.PNG)
+
 
 ## Testing
 The Application is tested using [Pytest](https://docs.pytest.org/en/7.1.x/)  
