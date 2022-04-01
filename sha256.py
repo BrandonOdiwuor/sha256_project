@@ -1,3 +1,6 @@
+import argparse
+
+
 ROUND_CONSTANTS = [
     0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,
     0xd807aa98, 0x12835b01, 0x243185be, 0x550c7dc3, 0x72be5d74, 0x80deb1fe, 0x9bdc06a7, 0xc19bf174,
@@ -133,3 +136,22 @@ def sha256(message):
         state_words = compress(state_words, block)
 
     return b"".join(x.to_bytes(4, 'big') for x in state_words)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description='Hashes a string or a file using the sha-256 algorithm')
+    parser.add_argument('--string', '-s', help='a string to be hashed')
+    parser.add_argument('--file', '-f', help='a file to be hashed')
+    args = parser.parse_args()
+
+    if args.string:
+        message = args.string.encode()
+        digest = sha256(message)
+        print(digest.hex())
+    if args.file:
+        with open(args.file) as file:
+            message = file.read().encode()
+            digest = sha256(message)
+            print(digest.hex())
+
+    
