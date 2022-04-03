@@ -12,7 +12,8 @@ Python Implementation of the SHA-256 Secure Hashing Algorithm defined in [FIPS 1
 python sha256.py -s 'message string'
 ```
 #### Screenshot example - String hashing compared with Python's Hashlib sha256 result
-![sha256_string_hash](https://user-images.githubusercontent.com/15610188/161234423-394f05cb-c45c-4da2-9471-85cf7d088391.PNG)
+![sha256_string_hash_latest](https://user-images.githubusercontent.com/15610188/161417365-ac2d728e-3916-4376-be5a-882554877434.PNG)
+
 
 ### 2. Hashing a file
 ```
