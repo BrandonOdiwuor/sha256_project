@@ -1,6 +1,7 @@
 import argparse
 
-from constants import ROUND_CONSTANTS, INITIALIZATION_VECTOR
+from sha256.constants import ROUND_CONSTANTS, INITIALIZATION_VECTOR
+
 
 def add32(*args):
     """
@@ -123,7 +124,7 @@ def sha256(message):
     return b"".join(x.to_bytes(4, 'big') for x in state_words)
 
 
-if __name__ == "__main__":
+def main():
     parser = argparse.ArgumentParser(description='Hashes a string or a file using the sha-256 algorithm')
     parser.add_argument('--string', '-s', help='a string to be hashed')
     parser.add_argument('--file', '-f', help='a file to be hashed')
@@ -138,4 +139,7 @@ if __name__ == "__main__":
     digest = sha256(message)
     print(digest.hex())
 
+
+if __name__ == "__main__":
+    main()
     

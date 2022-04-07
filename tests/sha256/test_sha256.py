@@ -1,6 +1,6 @@
 from hashlib import sha256 as hashlib_sha256
 
-from .sha256 import add32, right_rotate32, little_sigma0, little_sigma1, message_schedule_array,\
+from sha256.sha256 import add32, right_rotate32, little_sigma0, little_sigma1, message_schedule_array,\
     big_sigma0, big_sigma1, choice, majority, round, compress, padding, sha256
 
 
