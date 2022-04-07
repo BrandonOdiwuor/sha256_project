@@ -1,4 +1,4 @@
-# The SHA-256 Project - [PyPI](#)
+# The SHA-256 Project - [PyPI](https://pypi.org/project/sha256-brandonodiwuor)
 Python package implementing of the SHA-256 Secure Hashing Algorithm defined in [FIPS 180-4](https://csrc.nist.gov/publications/detail/fips/180/4/final) with a command-line interface. 
 
 - SHA-256 - An Implementation of Secure Hashing Algorithm 2 (SHA-2) with 256-bit digest. 
