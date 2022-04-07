@@ -5,14 +5,15 @@ Python package implementing of the SHA-256 Secure Hashing Algorithm defined in [
 - This implementation is based on the pseudocode algorithm from [Wikipedia](https://en.wikipedia.org/wiki/SHA-2#Pseudocode) and [The SHA-256 Project](https://github.com/oconnor663/sha256_project)
 
 ## Usage
-![sha256_help](https://user-images.githubusercontent.com/15610188/161290119-fe83155f-33a4-4c8c-a420-8f61985554c6.PNG)
+![sha256_help](https://user-images.githubusercontent.com/15610188/162286498-a33fa01f-b4b1-453f-8701-5395d5baf6ba.PNG)
+
 
 ### 1. Hashing a string
 ```
 python sha256.py -s 'message string'
 ```
 #### Screenshot example - String hashing compared with Python's Hashlib sha256 result
-![sha256_string_hash_latest](https://user-images.githubusercontent.com/15610188/161417365-ac2d728e-3916-4376-be5a-882554877434.PNG)
+![sha256_string_hash](https://user-images.githubusercontent.com/15610188/162286572-111878f7-2a76-4158-91d6-c62ae892ae90.PNG)
 
 
 ### 2. Hashing a file
@@ -20,7 +21,7 @@ python sha256.py -s 'message string'
 python sha256.py -f input-file.txt
 ```
 #### Screesnhot example - File hashing
-![sha256_file_hash](https://user-images.githubusercontent.com/15610188/161234743-39caa934-4d88-472c-a7a8-2c4c2a576eee.PNG)
+![sha256_file_hash](https://user-images.githubusercontent.com/15610188/162286838-15487283-e8e8-4d06-824a-3ffa8d0bf72a.PNG)
 
 
 ## Testing
